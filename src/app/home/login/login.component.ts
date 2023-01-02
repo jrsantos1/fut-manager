@@ -11,13 +11,11 @@ export class LoginComponent{
 
 constructor(private loginService: LoginService, private router: Router){}
 
-ngOnInit() {
-
-}
+ngOnInit() {}
 
 login(){
   this.loginService.logar(this.usuario, this.senha).subscribe((x) => {
-    console.log("Tentativa realizqada com sucesso");
+    console.log("Tentativa realizada com sucesso");
     console.log(x);
     this.router.navigate(['home']);
 

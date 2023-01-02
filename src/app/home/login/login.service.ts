@@ -12,7 +12,7 @@ export class LoginService {
   }
 
   logar(usuario: string, senha: string): Observable<HttpResponse<any>>{
-      return this.http.post('http://localhost:3000/user/login', {
+      return this.http.post('http://localhost:5000/login', {
         userName: usuario,
         password: senha
       },
@@ -20,6 +20,7 @@ export class LoginService {
       ).pipe(
         tap((x) => {
           const authToken: string = x.headers.get('x-access-token') ?? '';
+          console.log(x.body);
           this.usuarioService.salvaToken(authToken);
         })
       )
