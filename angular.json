@@ -70,7 +70,8 @@
               "browserTarget": "fut-manager:build:production"
             },
             "development": {
-              "browserTarget": "fut-manager:build:development"
+              "browserTarget": "fut-manager:build:development",
+              "proxyConfig": "./proxy.config.js"
             }
           },
           "defaultConfiguration": "development"

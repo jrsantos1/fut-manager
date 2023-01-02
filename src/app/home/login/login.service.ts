@@ -12,7 +12,7 @@ export class LoginService {
   }
 
   logar(usuario: string, senha: string): Observable<HttpResponse<any>>{
-      return this.http.post('http://localhost:5000/login', {
+      return this.http.post('/api/login', {
         userName: usuario,
         password: senha
       },
