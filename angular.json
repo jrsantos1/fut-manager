@@ -32,7 +32,10 @@
             "styles": [
               "src/styles.scss",
               "./node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "./node_modules/font-awesome/css/font-awesome.css"
+              "./node_modules/font-awesome/css/font-awesome.css",
+              "./node_modules/primeicons/primeicons.css",
+              "./node_modules/primeng/resources/themes/lara-light-blue/theme.css",
+              "./node_modules/primeng/resources/primeng.min.css"
             ],
             "scripts": []
           },
@@ -65,13 +68,17 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "fut-manager:build",
+            "proxyConfig": "src/proxy.conf.js"
+          },
           "configurations": {
             "production": {
               "browserTarget": "fut-manager:build:production"
             },
             "development": {
-              "browserTarget": "fut-manager:build:development",
-              "proxyConfig": "./proxy.config.js"
+              "browserTarget": "fut-manager:build:development"
+
             }
           },
           "defaultConfiguration": "development"
