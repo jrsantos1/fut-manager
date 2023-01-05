@@ -6,8 +6,9 @@ import { Router } from '@angular/router';
     templateUrl: "./login.component.html",
 })
 export class LoginComponent{
-  usuario: string = 'alvaro';
-  senha: string = '12345678';
+
+  usuario: string = 'jhonatan@hotmail.com';
+  senha: string = '12345';
 
 constructor(private loginService: LoginService, private router: Router){}
 

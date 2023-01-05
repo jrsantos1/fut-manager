@@ -13,14 +13,14 @@ export class LoginService {
 
   logar(usuario: string, senha: string): Observable<HttpResponse<any>>{
       return this.http.post('/api/login', {
-        userName: usuario,
-        password: senha
+        email: usuario,
+        senha: senha
       },
       {observe: 'response'}
       ).pipe(
         tap((x) => {
           const authToken: string = x.headers.get('x-access-token') ?? '';
-          console.log(x.body);
+          console.log(x.headers.get('x-access-token'));
           this.usuarioService.salvaToken(authToken);
         })
       )
